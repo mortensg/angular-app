@@ -1,0 +1,22 @@
+<div class="wrap">
+    <div class="content">
+        <div class="logo">
+            <span>Hi ✈️</span>
+        </div>
+
+        <div class="navigation">
+            <div class="item" routerLink="public"  [routerLinkActive]="['is-active']">
+                Home
+            </div>
+            <div class="item" routerLink="dashboard"  [routerLinkActive]="['is-active']" *ngIf="(isUserLoggedIn | async)">
+                Dashboard
+            </div>
+            <div class="item" routerLink="login"  [routerLinkActive]="['is-active']" *ngIf="!(isUserLoggedIn | async)">
+                Login
+            </div>
+            <div class="item" (click)="logout()" *ngIf="isUserLoggedIn | async">
+                logout
+            </div>
+        </div>
+    </div>
+</div>

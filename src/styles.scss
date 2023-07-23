@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+*, *:before, *:after{
+    box-sizing: border-box;
+}
+
+$primary: #FDD36C;
+
+
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #F5F5F5;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.btn-stroke {
+    background-color: transparent;
+    border: 1px solid $primary;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $primary;
+    }
+
+}
+
+.btn-fill {
+    background-color: $primary;
+    border: 1px solid $primary;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:disabled {
+        opacity: 0.5;
+    }
+
+    &:not(:disabled):hover {
+        background-color: #fff;
+    }
+}

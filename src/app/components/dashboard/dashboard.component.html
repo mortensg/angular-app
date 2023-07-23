@@ -1,0 +1,40 @@
+<div class="container" *ngIf="users$ | async as data">
+  <h1>
+    Passengers <span>{{data.totalPassengers}}</span>
+  </h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>trips</th>
+        <th>Airline</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of data.data">
+        <td>{{ user.name }}</td>
+        <td>{{ user.trips }}</td>
+        <td *ngFor="let airline of user.airline">{{airline.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="table-navigation">
+    <button [disabled]="currentPage === 0" (click)="firstPage()">first page</button>
+    <button [disabled]="currentPage === 0" (click)="prevPage()">prev page</button>
+    <div class="text">
+      Page {{currentPage + 1}} of {{data.totalPages}}.
+    </div>
+    <button [disabled]="currentPage === (data.totalPages - 1)" (click)="nextPage()">next page</button>
+    <button [disabled]="currentPage === (data.totalPages - 1)" (click)="lastPage((data.totalPages - 1))">last
+      page</button>
+    <select [(ngModel)]="dataSize" (ngModelChange)="changeDataSize(dataSize)">
+      <option value="10">10</option>
+      <option value="20">20</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+    </select>
+
+  </div>
+</div>
+
+<img class="loading" *ngIf="!(users$ | async)" src="../../../assets/images/spinner.gif" alt="">

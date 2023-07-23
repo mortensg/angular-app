@@ -1,0 +1,123 @@
+:host {
+    width: 100%;
+    padding: 30px 20px;
+    max-width: 1200px;
+    position: relative;
+}
+
+.container {
+    z-index: 2;
+    position: relative;
+}
+
+h1 {
+    color: #353535;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+
+    span {
+        margin-left: 10px;
+        font-size: 12px;
+        background: #FDD36C;
+        padding: 9px;
+        border-radius: 10px;
+    }
+}
+
+table {
+
+    width: 100%;
+    border-spacing: 0;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+
+    thead {
+        display: flex;
+        width: 100%;
+
+        tr {
+            display: flex;
+            width: 100%;
+
+            th {
+                flex: 1;
+            }
+        }
+    }
+
+
+    tbody {
+        display: block;
+        max-height: 700px;
+        overflow-y: scroll;
+        flex: 1;
+
+        tr {
+            width: 100%;
+            display: flex;
+
+            td {
+                flex: 1;
+            }
+        }
+    }
+
+    tr {
+        th {
+            padding: 10px;
+            text-align: left;
+            text-transform: capitalize;
+        }
+
+
+        td {
+            border: 1px solid #E8E8E7;
+            border-collapse: collapse;
+            padding: 20px;
+            text-transform: capitalize;
+            background-color: #fff;
+            font-size: 14px;
+
+        }
+    }
+}
+
+.table-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .text {
+        margin: 0 20px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    button {
+        background-color: #fff;
+        border: 1px solid #E8E8E7;
+        padding: 10px 20px;
+        text-transform: capitalize;
+
+        &:not(:disabled) {
+            cursor: pointer;
+
+            &:hover {
+                background-color: #FDD36C;
+            }
+        }
+    }
+}
+
+.loading {
+    width: 100px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1;
+}

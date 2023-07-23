@@ -1,0 +1,51 @@
+:host {
+    width: 100%;
+    padding: 30px 20px;
+    max-width: 1200px;
+    position: relative;
+}
+
+.login-form {
+    max-width: 500px;
+    
+    form {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 10px;
+
+        input {
+            background-color: #fff;
+            border: 1px solid  #E8E8E7;
+            padding: 20px;
+            font-size: 25px;
+        }
+
+
+        .actions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 10px;
+        }
+    }
+}
+
+.error {
+    max-width: 500px;
+    text-align: center;
+    border: 2px solid black;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+
+    h1 {
+        color: #FDD36C;
+        text-shadow: 2px 2px 0px #000000;
+    }
+    p {
+        opacity: 0.8;
+        font-size: 12px;
+    }
+}
